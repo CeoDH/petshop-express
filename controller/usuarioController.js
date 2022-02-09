@@ -2,6 +2,10 @@
 
 const usuarioController = {
 
+    index:( req, res ) => {
+        //render
+        res.render( "index" )
+    },
     cadastro:( req, res ) => {
         //render
         res.render( "cadastro" )

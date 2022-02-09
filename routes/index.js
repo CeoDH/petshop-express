@@ -18,6 +18,7 @@ router.get( '/servico',petsController.listaServicos );
 router.get( '/pets',petsController.listaPets );
 
 
+router.get( '/index',usuarioController.index );
 
 router.get( '/usuario',usuarioController.cadastro );
 
