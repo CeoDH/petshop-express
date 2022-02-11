@@ -1,10 +1,11 @@
 
+let serviços = require( "../model/servico.json" );
 
-const usuarioController = {
+const controllerUsuario = {
 
     index:( req, res ) => {
         //render
-        res.render( "index" )
+        res.render( "index", {listaServiços:serviços} )
     },
     cadastro:( req, res ) => {
         //render
@@ -46,5 +47,5 @@ const usuarioController = {
 
 /* ---------------------------------------------------------- */
 module.exports = {
-    usuarioController,
+    controllerUsuario,
 };

@@ -1,38 +1,40 @@
-var express = require( 'express' );
-var router = express.Router();
-const petsController = require( "../controller/petsController" );
+let express = require( 'express' );
+let router = express.Router();
+const controllerPets = require( "../controller/controllerPets" );
+const controllerServiços = require( "../controller/controllerServiços" );
 
-const { usuarioController } = require('../controller/usuarioController');
+const { controllerUsuario } = require('../controller/controllerUsuario');
 
 
 
 
 /* GET home page. */
-router.get( '/', function( req, res, ) {
+/* router.get( '/', function( req, res, ) {
   res.render( 'index', { title: 'Aula 04/02' } );
-} );
+} ); */
+
+router.get('/',controllerUsuario.index)
+
+router.get( '/servico',controllerServiços.listaServiços );
+
+router.get( '/pets',controllerPets.listaPets );
 
 
-router.get( '/servico',petsController.listaServicos );
+router.get( '/index',controllerUsuario.index );
 
-router.get( '/pets',petsController.listaPets );
+router.get( '/usuario',controllerUsuario.cadastro );
 
+router.get( '/aula',controllerUsuario.aula );
 
-router.get( '/index',usuarioController.index );
+router.get( '/contato',controllerUsuario.contato );
 
-router.get( '/usuario',usuarioController.cadastro );
+router.get( '/error',controllerUsuario.error );
 
-router.get( '/aula',usuarioController.aula );
+router.get( '/login',controllerUsuario.login );
 
-router.get( '/contato',usuarioController.contato );
+router.get( '/servicos',controllerUsuario.servicos );
 
-router.get( '/error',usuarioController.error );
-
-router.get( '/login',usuarioController.login );
-
-router.get( '/servicos',usuarioController.servicos );
-
-router.get( '/sobre',usuarioController.sobre );
+router.get( '/sobre',controllerUsuario.sobre );
 
 
 
